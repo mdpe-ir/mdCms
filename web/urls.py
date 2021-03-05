@@ -2,9 +2,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from django_grapesjs.views import GetTemplateDjangoGrapeJs
 
-import pageBuilder
 from users import views as user_views
 
 from django.conf import settings
@@ -17,7 +15,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
     url(r'^summernote/', include('django_summernote.urls')),
-    path('get_template/', GetTemplateDjangoGrapeJs.as_view(), name='dgjs_get_template'),
+
     # API urls
     path('api-blog/', include('blog.api.urls')),
     # Blog urls
