@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% load bootstrap5 %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">ورورد به حساب کاربری</legend>
+                {% bootstrap_form form %}
+            </fieldset>
+            <div class="form-group">
+                <button  style="margin: 10px" class="btn btn-primary m-3" type="submit">ورورد به حساب کاربری</button>
+                <small class="text-muted ml-2">
+                    <a href="{% url 'password_reset' %}">رمز عبور خود را فراموش کرده اید؟</a>
+                </small>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                هنوز اکانت ندارید؟ <a class="ml-2" href="{% url 'register' %}">همین الان ثبت نام کنید</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
