@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "IRANYekanWeb";
+  src: url("./fonts/iranyekanwebregular.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/iranyekanwebregular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/iranyekanwebregular.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/iranyekanwebregular.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/iranyekanwebregular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/iranyekanwebregular.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/iranyekanwebregular.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
