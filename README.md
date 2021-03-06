@@ -88,7 +88,7 @@ TODOS
 - Change Admin Style
 - Change Site Style
 - More Options For New Post
-- Sidebar
+- Sidebar ✅
 - Reply comment
 - Search for post any pages
 - Create following system
