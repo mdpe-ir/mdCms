@@ -21,11 +21,12 @@ class PostManager(models.Manager):
 class Post(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, verbose_name="عنوان")
     previewImage = models.ImageField(
-        upload_to=f'{date.strftime(date.today(), "%Y")}/{date.strftime(date.today(), "%m")}/{date.strftime(date.today(), "%d")}')
-    content = RichTextField()
-    previewText = RichTextField(max_length=1000)
+        upload_to=f'{date.strftime(date.today(), "%Y")}/{date.strftime(date.today(), "%m")}/{date.strftime(date.today(), "%d")}',
+        verbose_name="تصویر پیشنمایش")
+    content = RichTextField(verbose_name="محتوا")
+    previewText = RichTextField(max_length=1000, verbose_name="متن پیش نمایش")
     liked = models.ManyToManyField(
         settings.AUTH_USER_MODEL, blank=True, related_name='liked')
     date_posted = models.DateTimeField(default=timezone.now)

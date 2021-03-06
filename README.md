@@ -85,7 +85,8 @@ $ python manage.py shell
 TODOS
 =
 
-- Change Style
+- Change Admin Style
+- Change Site Style
 - More Options For New Post
 - Sidebar
 - Reply comment
@@ -108,8 +109,9 @@ TODOS
 
 -----
 
-Author 
+Author
 =
 
-###### Mahan Esnaasharan 
+###### Mahan Esnaasharan
+
 Site : Mdpe.ir

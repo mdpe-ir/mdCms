@@ -12,6 +12,7 @@ def get_menu(request):
         context['appBarColor'] = BaseSiteSettings.objects.all()[0].appBarColor
         context['appBarTextColor'] = BaseSiteSettings.objects.all()[0].appBarTextColor
         context['appBarTextColorOnHover'] = BaseSiteSettings.objects.all()[0].appBarTextColorOnHover
+        context['sidebarContent'] = BaseSiteSettings.objects.all()[0].sidebarContent
     except Exception as e:
         baseSiteSettings = BaseSiteSettings()
         baseSiteSettings.save()

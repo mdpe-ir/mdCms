@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from colorfield.fields import ColorField
 from django.db import models
 
@@ -13,6 +14,7 @@ class BaseSiteSettings(models.Model):
     appBarTextColor = ColorField(default='#FFFFFB')
     appBarTextColorOnHover = ColorField(default='#FFFFFB')
     siteLogo = models.ImageField()
+    sidebarContent = RichTextField(default="ساید بار را از تنظیمات ویرایش کنید")
 
     def __str__(self):
         return f"    فایل تنظیمات {self.id} "
