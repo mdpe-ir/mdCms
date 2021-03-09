@@ -88,7 +88,7 @@ TODOS
 - [] Change Admin Style
 - [] Change Site Style
 - [] More Options For New Post
--[x] Sidebar 
+- [x] Sidebar
 - [] Reply comment
 - [] Search for post any pages
 - [] Create following system
@@ -108,7 +108,7 @@ TODOS
 - [] Add Title
 - [] Add Analyse
 - []  Add Seo
-- [] Add Footer 
+- [] Add Footer
 - ...
 
 -----
