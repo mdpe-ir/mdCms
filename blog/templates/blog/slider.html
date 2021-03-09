@@ -15,10 +15,12 @@
 
         {% for slider in sliders %}
 
+
             <div class="carousel-item {% if forloop.first %}
             active
             {% endif %}  ">
-                <img src="/media/{{ slider.image }}" class="d-block w-100" alt="...">
+                <a href="{{ slider.targetUrl }}"><img src="/media/{{ slider.image }}" class="d-block w-100"
+                                                      alt="..."></a>
                 <div class="carousel-caption d-none d-md-block">
                     <h5>{{ slider.label | safe }}</h5>
                     <p>{{ slider.caption | safe }}</p>
