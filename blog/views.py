@@ -1,4 +1,4 @@
-from .models import Post, Comment
+from .models import Post, Comment, SliderContent
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -16,8 +16,10 @@ from django.views.generic import (
 
 
 class PostListView(ListView):
+    context = {'sliders': SliderContent.objects.all or {}}
     model = Post
     template_name = 'blog/index.html'
+    extra_context = context
     context_object_name = 'posts'
     paginate_by = 5
 

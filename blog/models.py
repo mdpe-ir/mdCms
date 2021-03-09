@@ -6,6 +6,8 @@ from django.utils import timezone
 from django.urls import reverse
 from django.conf import settings
 
+from web.settings import UPLOAD_REGEX
+
 
 class PostManager(models.Manager):
     def like_toggle(self, user, post_obj):
@@ -23,7 +25,7 @@ class Post(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=100, verbose_name="عنوان")
     previewImage = models.ImageField(
-        upload_to=f'{date.strftime(date.today(), "%Y")}/{date.strftime(date.today(), "%m")}/{date.strftime(date.today(), "%d")}',
+        upload_to=UPLOAD_REGEX,
         verbose_name="تصویر پیشنمایش")
     content = RichTextField(verbose_name="محتوا")
     previewText = RichTextField(max_length=1000, verbose_name="متن پیش نمایش")
@@ -61,3 +63,24 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.author.username
+
+
+class SliderContent(models.Model):
+    id = models.AutoField(primary_key=True)
+    image = models.ImageField(upload_to=UPLOAD_REGEX)
+    order = models.PositiveIntegerField()
+    targetUrl = models.CharField(max_length=200)
+    label = RichTextField(blank=True)
+    caption = RichTextField(blank=True)
+
+    class Meta:
+        ordering = ('order',)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def get_id(self):
+        return self.id
+
+    def __str__(self):
+        return f" ترتیب :  {self.order} | شناسه : {self.id}"

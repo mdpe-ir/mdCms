@@ -2,17 +2,32 @@
 {% load jformat %}
 
 {% block content %}
-    <!-- Search Form -->
+
+
+    <!-- Slider  -->
+
+
+    <div class="mb-3">
+        {% include  "blog/slider.html"   with sliders=sliders %}
+    </div>
+
+
+    <!-- End Slider -->
 
     {% for post in posts %}
+
+
+
+
         <article class="media content-section">
+
             <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
             <div class="media-body">
                 <div class="article-metadata">
                     <span>نویسنده : </span> <a class="mr-2"
                                                href="{% url 'user_posts' post.author.username %}">{{ post.author }} </a>
                     <h6 class="text-muted"> منتشر شده در
-                    {{ post.date_posted|jformat:"%H:%M  -   %Y/%m/%d" }} </h6>
+                        {{ post.date_posted|jformat:"%H:%M  -   %Y/%m/%d" }} </h6>
                 </div>
                 <img style="margin-bottom: 10px " class="img-fluid rounded" src="/media/{{ post.previewImage }}">
 
