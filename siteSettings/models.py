@@ -7,13 +7,14 @@ from django.db.models import TextField
 from django.shortcuts import get_list_or_404
 
 from pageBuilder.models import PagesModel
+from web.settings import UPLOAD_REGEX
 
 
 class BaseSiteSettings(models.Model):
     appBarColor = ColorField(default='#5F788A')
     appBarTextColor = ColorField(default='#FFFFFB')
     appBarTextColorOnHover = ColorField(default='#FFFFFB')
-    siteLogo = models.ImageField()
+    siteLogo = models.ImageField(upload_to=UPLOAD_REGEX)
     sidebarContent = RichTextField(default="ساید بار را از تنظیمات ویرایش کنید")
 
     def __str__(self):

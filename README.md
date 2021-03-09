@@ -85,26 +85,30 @@ $ python manage.py shell
 TODOS
 =
 
-- Change Admin Style
-- Change Site Style
-- More Options For New Post
-- Sidebar ✅
-- Reply comment
-- Search for post any pages
-- Create following system
-- Read later post
-- Add Slider
-- Add Another Language
-    - English
-    - French
-    - Arabic
-- New Admin Panel
-- Support plugins
-- Support Them Installer
-- Support SMTP email
-- Scheduled post
-- Add Installer
-- Add E-commerce Module
+- [] Change Admin Style
+- [] Change Site Style
+- [] More Options For New Post
+- [x] Sidebar
+- [] Reply comment
+- [] Search for post any pages
+- [] Create following system
+- [] Read later post
+- [x] Add Slider
+- [] Add Another Language
+    - [] English
+    - [] French
+    - [] Arabic
+- [] New Admin Panel
+- [] Support plugins
+- [] Support Them Installer
+- [] Support SMTP email
+- [] Scheduled post
+- [] Add Installer
+- [] Add E-commerce Module
+- [] Add Title
+- [] Add Analyse
+- []  Add Seo
+- [] Add Footer
 - ...
 
 -----

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, SliderContent
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -18,9 +18,16 @@ class CommentAdmin(admin.ModelAdmin):
                     'approved_comment', 'created_date')
     list_display_links = ('id', 'author', 'post')
     list_filter = ('author', 'created_date')
-    list_editable = ('approved_comment', )
+    list_editable = ('approved_comment',)
     search_fields = ('author', 'post')
     list_per_page = 20
 
 
 admin.site.register(Comment, CommentAdmin)
+
+
+class SliderContentAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(SliderContent, SliderContentAdmin)
