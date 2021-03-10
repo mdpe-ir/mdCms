@@ -16,6 +16,8 @@ class BaseSiteSettings(models.Model):
     appBarTextColorOnHover = ColorField(default='#FFFFFB')
     siteLogo = models.ImageField(upload_to=UPLOAD_REGEX)
     sidebarContent = RichTextField(default="ساید بار را از تنظیمات ویرایش کنید")
+    copyrightText = RichTextField(default="کپی رایت را از تنظیمات ویرایش کنید .")
+    aboutSite = RichTextField(default="متن درباره را از تنظیمات ویرایش کنید .")
 
     def __str__(self):
         return f"    فایل تنظیمات {self.id} "

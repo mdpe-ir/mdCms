@@ -108,7 +108,13 @@ TODOS
 - [] Add Title
 - [] Add Analyse
 - []  Add Seo
-- [] Add Footer
+- [X] Add Footer
+- [] Django User Visits
+- [] Matomo / Google Analyse Add
+- [] Site Map Generator
+- [] Pop Up
+- [] Notification
+
 - ...
 
 -----

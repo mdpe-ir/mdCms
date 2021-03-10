@@ -1,3 +1,4 @@
+from footer.models import FooterBlocks, FooterSocialMedia
 from siteSettings.models import AppBarMenu, BaseSiteSettings
 from django.shortcuts import *
 
@@ -13,8 +14,20 @@ def get_menu(request):
         context['appBarTextColor'] = BaseSiteSettings.objects.all()[0].appBarTextColor
         context['appBarTextColorOnHover'] = BaseSiteSettings.objects.all()[0].appBarTextColorOnHover
         context['sidebarContent'] = BaseSiteSettings.objects.all()[0].sidebarContent
-    except Exception as e:
-        baseSiteSettings = BaseSiteSettings()
-        baseSiteSettings.save()
+        context['copyrightText'] = BaseSiteSettings.objects.all()[0].copyrightText
+        context['aboutSite'] = BaseSiteSettings.objects.all()[0].aboutSite
 
+    except Exception as e:
+        base_site_settings = BaseSiteSettings()
+        base_site_settings.save()
+
+    return context
+
+
+def get_footer(request):
+    context = {}
+    footer_block_contents = FooterBlocks.objects.all() or {}
+    footer_social_medias = FooterSocialMedia.objects.all() or {}
+    context['footer_blocks'] = footer_block_contents
+    context['footer_social_medias'] = footer_social_medias
     return context

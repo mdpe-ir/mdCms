@@ -1,5 +1,7 @@
 {% load static %}
 {% load i18n %}
+{% load fontawesome_5 %}
+
 <!DOCTYPE html>
 <html lang="fa">
 
@@ -88,7 +90,7 @@
             font-size: 16px;
             text-transform: uppercase;
             margin-top: 5px;
-            letter-spacing: 2px
+
         }
 
         .site-footer a {
@@ -228,6 +230,19 @@
         }
     </style>
 
+    <!-- reference your installed Font Awesome Free package's files here -->
+    <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
+    <!-- reference your installed Font Awesome Free package's files here -->
+    <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- Our project just needs Font Awesome Free's Solid + Brand files -->
+    <link href="{% static 'fontawesome_free/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesome_free/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesome_free/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% fontawesome_5_static %}
 
     {% block customHeaderLibre %}
 
@@ -334,60 +349,82 @@
 </main>
 <!-- Site footer -->
 <footer class="site-footer">
+
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                <h6>About</h6>
-                <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the
-                    upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or
-                    snippets as the code wants to be simple. We will help programmers build up concepts in different
-                    programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL
-                    and Algorithm.</p>
+                <h6>درباره</h6>
+                <p class="text-justify">
+
+                    {{ aboutSite  | safe }}
+                </p>
+
             </div>
 
-            <div class="col-xs-6 col-md-3">
-                <h6>Categories</h6>
-                <ul class="footer-links">
-                    <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-                    <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-                    <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-                    <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-                    <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-                    <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
-                </ul>
-            </div>
 
-            <div class="col-xs-6 col-md-3">
-                <h6>Quick Links</h6>
-                <ul class="footer-links">
-                    <li><a href="http://scanfcode.com/about/">About Us</a></li>
-                    <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-                    <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-                    <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
-                </ul>
-            </div>
+
+            {% for footer_block in footer_blocks %}
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>{{ footer_block.label }}</h6>
+
+                    {{ footer_block.content | safe }}
+
+                </div>
+
+            {% endfor %}
+
+            {% if not footer_blocks %}
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>بلاک های فوتر</h6>
+
+                    <p>بعد از ساخت اولین بلاک در پنل مدیریت بخش فوتر (پاورقی) این بلاک به صورت اتوماتیک حذف میشود</p>
+
+                </div>
+
+            {% endif %}
+
+
         </div>
         <hr>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-sm-6 col-xs-12">
-                <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
-                    <a href="#">Scanfcode</a>.
+                <p class="copyright-text">{{ copyrightText | safe }}
                 </p>
             </div>
 
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <ul class="social-icons">
-                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    {% for footer_social_media in footer_social_medias %}
+
+                        <li><a class="{{ footer_social_media.get_icons }}"
+                               href="{{ footer_social_media.link }}">   {% fa5_icon footer_social_media.get_icons 'fab' %}</a>
+                        </li>
+
+
+
+
+
+                    {% endfor %}
+
+
                 </ul>
+
+                {% if not footer_social_medias %}
+
+                    <p>جهت افزودن شبکه های اجتماعی به پنل مدیریت بخش فوتر (پاورقی) -> شبکه های اجتماعی مراجعه کنید .
+                        <strong>بعد
+                            از افزودن شبکه های اجتماعی این پیام به صورت اتوماتیک حذف میشود</strong></p>
+
+                {% endif %}
+
             </div>
         </div>
     </div>
+
 </footer>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
