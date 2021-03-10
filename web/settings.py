@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'siteSettings',
     'home',
     'crispy_forms',
-
+    'footer',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'django_jalali',
     'bootstrap5',
+    'fontawesome-free',
+    'fontawesome_5',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +82,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'home.context_processors.get_menu',
+                'home.context_processors.get_footer',
             ],
         },
     },
@@ -193,3 +196,5 @@ CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 UPLOAD_REGEX = f'{date.strftime(date.today(), "%Y")}/{date.strftime(date.today(), "%m")}/{date.strftime(date.today(), "%d")}'
+
+FONTAWESOME_5_PREFIX = 'fa'
