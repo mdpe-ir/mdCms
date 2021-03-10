@@ -1,7 +1,7 @@
 # MD CMS
 
 [![](https://img.shields.io/pypi/pyversions/Django.svg)](https://python.org/downloads/)
-[![](https://img.shields.io/apm/l/vim-mode.svg)](https://choosealicense.com/licenses/mit/)
+[![](https://img.shields.io/static/v1?label=licence&message=MDPE%20License&color=lightblue)](http://mdpe.ir/licenses)
 
 Full-Featured Blog and Cms with Django web framework.
 
