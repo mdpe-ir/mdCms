@@ -113,11 +113,17 @@ TODOS
 - [] Matomo / Google Analyse Add
 - [] Site Map Generator
 - [] Pop Up
-- [] Notification
+- [X] Notification (Check FAQ For more info)
 
 - ...
 
 -----
+FAQ
+= 
+
+### How Add Notification To Site ?
+
+https://www.digitalocean.com/community/tutorials/how-to-send-web-push-notifications-from-django-applications
 
 Author
 =
@@ -125,3 +131,7 @@ Author
 ###### Mahan Esnaasharan
 
 Site : Mdpe.ir
+
+
+
+
