@@ -1,4 +1,5 @@
 from footer.models import FooterBlocks, FooterSocialMedia
+from popup.models import PopupMessages
 from siteSettings.models import AppBarMenu, BaseSiteSettings
 from django.shortcuts import *
 
@@ -30,4 +31,11 @@ def get_footer(request):
     footer_social_medias = FooterSocialMedia.objects.all() or {}
     context['footer_blocks'] = footer_block_contents
     context['footer_social_medias'] = footer_social_medias
+    return context
+
+
+def show_popup(request):
+    context = {}
+    popup = PopupMessages.objects.filter(display=True).last() or {}
+    context['popup'] = popup
     return context

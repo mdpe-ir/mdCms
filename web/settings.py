@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'fontawesome-free',
     'fontawesome_5',
+    'popup',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'home.context_processors.get_menu',
                 'home.context_processors.get_footer',
+                'home.context_processors.show_popup',
             ],
         },
     },
