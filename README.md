@@ -112,7 +112,7 @@ TODOS
 - [] Django User Visits
 - [] Matomo / Google Analyse Add
 - [] Site Map Generator
-- [] Pop Up
+- [X] Pop Up
 - [X] Notification (Check FAQ For more info)
 
 - ...
