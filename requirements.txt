@@ -9,9 +9,11 @@ django-bootstrap-v5==1.0.0
 django-ckeditor==6.0.0
 django-colorfield==0.4.1
 django-crispy-forms==1.11.1
+django-fontawesome-5==1.0.18
 django-jalali==4.1.2
 django-js-asset==1.2.2
 django-quill-editor==0.1.21
+django-sitemaps==1.1.1
 django-summernote==0.8.11.6
 django-tinymce==3.2.0
 djangorestframework==3.12.2
@@ -20,6 +22,7 @@ future==0.18.2
 idna==2.10
 importlib-metadata==2.1.1
 jdatetime==3.6.2
+lxml==4.6.2
 Pillow==8.1.0
 pyparsing==2.4.7
 pytz==2021.1
