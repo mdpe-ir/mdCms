@@ -85,37 +85,36 @@ $ python manage.py shell
 TODOS
 =
 
-- [] Change Admin Style
-- [] Change Site Style
-- [] More Options For New Post
+- [ ] Change Admin Style
+- [ ] Change Site Style
+- [ ] More Options For New Post
 - [x] Sidebar
-- [] Reply comment
-- [] Search for post any pages
-- [] Create following system
-- [] Read later post
+- [ ] Reply comment
+- [ ] Search for post any pages
+- [ ] Create following system
+- [ ] Read later post
 - [x] Add Slider
-- [] Add Another Language
-    - [] English
-    - [] French
-    - [] Arabic
-- [] New Admin Panel
-- [] Support plugins
-- [] Support Them Installer
-- [] Support SMTP email
-- [] Scheduled post
-- [] Add Installer
-- [] Add E-commerce Module
-- [] Add Title
-- [] Add Analyse
-- []  Add Seo
+- [ ] Add Another Language
+    - [ ] English
+    - [ ] French
+    - [ ] Arabic
+- [ ] New Admin Panel
+- [ ] Support plugins
+- [ ] Support Them Installer
+- [ ] Support SMTP email
+- [ ] Scheduled post
+- [ ] Add Installer
+- [ ] Add E-commerce Module
+- [ ] Add Title
+- [ ] Add Analyse
+- [ ]  Add Seo
 - [X] Add Footer
-- [] Django User Visits
-- [] Matomo / Google Analyse Add
-- [] Site Map Generator
+- [ ] Django User Visits
+- [ ] Matomo / Google Analyse Add
+- [ ] Site Map Generator
 - [X] Pop Up
 - [X] Notification (Check FAQ For more info)
-
-- ...
+- [ ] ...
 
 -----
 FAQ

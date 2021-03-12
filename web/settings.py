@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'fontawesome-free',
     'fontawesome_5',
     'popup',
+    'django_sitemaps',
 ]
 
 MIDDLEWARE = [
